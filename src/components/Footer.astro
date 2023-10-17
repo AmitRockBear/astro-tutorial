@@ -1,0 +1,25 @@
+---
+import Social from "./Social.astro"
+
+const platformToUserName = {
+  twitter: "astoTwitter",
+  github: "astroGitHub",
+  youtube: "astroYotube",
+}
+---
+
+<footer>
+  {
+    Object.entries(platformToUserName).map(([platform, username]) => (
+      <Social username={username} platform={platform} />
+    ))
+  }
+</footer>
+
+<style>
+  footer {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+</style>
